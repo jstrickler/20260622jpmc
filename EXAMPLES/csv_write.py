@@ -19,14 +19,14 @@ chicago_data = [
     ['SWINE,  MATTHEW W', 'SERGEANT', 'POLICE', '$99756.00'],
     ['''RYDER,  MYRTA T "Lil'Myrt"''', 'POLICE OFFICER', 'POLICE', '$83706.00'],
     ['KORSHAK,  ROMAN', 'PARAMEDIC', 'FIRE', '$75372.00']
-]
+a
 
 with open('../TEMP/chi_data.csv', 'w') as chi_out:
     #  On Windows, output line terminator must be set to '\n'.
     #  While it's not needed on Linux/Mac, it doesn't cause any problems,
     #  so this keeps the code portable.
-    wtr = csv.writer(chi_out, lineterminator='\n') # create CSV writer from file object that is opened
+    wtr = csv.writer(chi_out, delimiter=":", lineterminator='\n') # create CSV writer from file object that is opened
     for data_row in chicago_data:  # iterate over records from file
         data_row[0] = data_row[0].title()  # make first field title case rather than all uppercase
-        data_row[-1] = data_row[-1].lstrip('$')  # strip leading $ from last field
+        data_row[-1] = data_row[-1].removeprefix('$')  # strip leading $ from last field
         wtr.writerow(data_row) # write one row (of iterables) to output file

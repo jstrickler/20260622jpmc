@@ -18,6 +18,8 @@ def test_missing_filename():
     with pytest.raises(FileNotFoundError):
         read_file_data(FILE_NAME)  # will pass test if file is NOT found
 
+# def test_existing_filename():
+#     assert read_file_data("test_mock.py")
 
 def test_list():
     # fail unless values are within 0.000001 of each other

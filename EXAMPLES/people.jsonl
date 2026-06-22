@@ -1,0 +1,3 @@
+{"name": "Alice", "role": "Engineer", "active": true}
+{"name": "Bob", "role": "Data Scientist", "active": false}
+{"name": "Charlie", "role": "Manager", "active": true}
