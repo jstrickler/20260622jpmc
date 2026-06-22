@@ -3,12 +3,15 @@ from pprint import pprint  # import prettyprint function
 # global variables
 count = 42  
 animal = 'Wombat'
+knight = 'Arthur'
 
 def spam(fruit):  # function parameters are local
     knight = 'Lancelot'  # local variable
     print("Locals:")
     pprint(locals())  # locals() returns dict of all locals
     print()
+    print(globals()['knight'])
+    globals()['knight'] = "Stan"
 
 spam('mango')
 
